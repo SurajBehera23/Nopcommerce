@@ -31,7 +31,7 @@ class Test01_Admin_Login:
         self.admin_lp.enter_password(self.password)
         self.admin_lp.click_login()
         actual_dashboard_text=self.driver.find_element(By.XPATH,"//div[@class='content-header']/h1").text
-        expected_dashboard_text="Daashboard"
+        expected_dashboard_text="Dashboard"
         if actual_dashboard_text==expected_dashboard_text:
             assert True
             self.driver.close()
@@ -48,7 +48,7 @@ class Test01_Admin_Login:
         self.admin_lp.enter_password(self.password)
         self.admin_lp.click_login()
         actual_error_text = self.driver.find_element(By.XPATH, "//div[@class='message-error validation-summary-errors']/ul").text
-        expected_error_text = "Noo customer account found"
+        expected_error_text = "No customer account found"
         if actual_error_text == expected_error_text:
             assert True
             self.driver.close()
@@ -56,5 +56,4 @@ class Test01_Admin_Login:
             self.driver.save_screenshot(".//screenshot//test_invalid_admin_login.png")
             self.driver.close()
             assert False
-    def
 
