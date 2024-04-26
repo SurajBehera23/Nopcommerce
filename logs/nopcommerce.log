@@ -58,3 +58,9 @@
 04/19/2024 01:56:39 PM: INFO: **********test_valid_admin_login Passed**********
 04/19/2024 01:56:39 PM: INFO: **********test_invalid_admin_login Started**********
 04/19/2024 01:56:42 PM: INFO: **********test_invalid_admin_login Passed**********
+04/22/2024 11:47:26 AM: INFO: **********test_title_verification started**********
+04/22/2024 11:47:31 AM: INFO: **********test_title_verification Passed**********
+04/22/2024 11:47:31 AM: INFO: **********test_valid_admin_login Started**********
+04/22/2024 11:47:38 AM: INFO: **********test_valid_admin_login Passed**********
+04/22/2024 11:47:39 AM: INFO: **********test_invalid_admin_login Started**********
+04/22/2024 11:47:43 AM: INFO: **********test_invalid_admin_login Passed**********
