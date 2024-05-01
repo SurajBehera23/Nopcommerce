@@ -15,9 +15,9 @@ class Test01_Admin_Login:
     invalid_username = Read_Config.get_invalid_username()
     logger = Log_Maker.log_gen()
 
-    def test_title_verification(self):
+    def test_title_verification(self,setup):
         self.logger.info("**********test_title_verification started**********")
-        self.driver = webdriver.Chrome()
+        self.driver = setup
         self.driver.get(self.admin_page_url)
         actual_title = self.driver.title
         expected_title = "Your store. Login"
@@ -26,14 +26,14 @@ class Test01_Admin_Login:
             assert True
             self.driver.close()
         else:
-            self.driver.save_screenshot(".//screenshot//test_title_verification.png")
+            self.driver.save_screenshot(".\\screenshot\\test_title_verification.png")
             self.logger.info("**********test_title_verification failed**********")
             self.driver.close()
             assert False
 
-    def test_valid_admin_login(self):
+    def test_valid_admin_login(self,setup):
         self.logger.info("**********test_valid_admin_login Started**********")
-        self.driver = webdriver.Chrome()
+        self.driver = setup
         self.driver.get(self.admin_page_url)
         self.admin_lp = Login_Admin_Page(self.driver)
         self.admin_lp.enter_username(self.username)
@@ -46,14 +46,14 @@ class Test01_Admin_Login:
             assert True
             self.driver.close()
         else:
-            self.driver.save_screenshot(".//screenshot//test_valid_admin_login.png")
+            self.driver.save_screenshot(".\\screenshot\\test_valid_admin_login.png")
             self.logger.info("**********test_valid_admin_login failed**********")
             self.driver.close()
             assert False
 
-    def test_invalid_admin_login(self):
+    def test_invalid_admin_login(self,setup):
         self.logger.info("**********test_invalid_admin_login Started**********")
-        self.driver = webdriver.Chrome()
+        self.driver = setup
         self.driver.get(self.admin_page_url)
         self.admin_lp = Login_Admin_Page(self.driver)
         self.admin_lp.enter_username(self.invalid_username)
@@ -67,7 +67,7 @@ class Test01_Admin_Login:
             assert True
             self.driver.close()
         else:
-            self.driver.save_screenshot(".//screenshot//test_invalid_admin_login.png")
+            self.driver.save_screenshot(".\\screenshot\\test_invalid_admin_login.png")
             self.logger.info("**********test_invalid_admin_login Failed**********")
             self.driver.close()
             assert False
