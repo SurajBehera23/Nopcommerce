@@ -9,20 +9,21 @@ from utilities.custom_logger import Log_Maker
 from utilities import excel_utils
 
 
-class Test01_Admin_Login:
+class Test02_Admin_Login_data_driven:
     admin_page_url = Read_Config.get_admin_page_url()
-    username = Read_Config.get_username()
-    password = Read_Config.get_password()
-    invalid_username = Read_Config.get_invalid_username()
+    path = ".//test_data//admin_login_data.xlsx"
     logger = Log_Maker.log_gen()
 
-    def test_valid_admin_login(self, setup):
-        self.logger.info("**********test_valid_admin_login Started**********")
+    def test_valid_admin_login_data_driven(self, setup):
+        self.logger.info("**********test_valid_admin_login_data_driven Started**********")
         self.driver = setup
+        self.driver.implicitly_wait(10)
         self.driver.get(self.admin_page_url)
         self.admin_lp = Login_Admin_Page(self.driver)
-        self.admin_lp.enter_username(self.username)
-        self.admin_lp.enter_password(self.password)
+
+        self.rows=excel_utils.get_row_count(self.path,"Sheet1")
+        print("num of rows= ", self.rows)
+
         self.admin_lp.click_login()
         actual_dashboard_text = self.driver.find_element(By.XPATH, "//div[@class='content-header']/h1").text
         expected_dashboard_text = "Dashboard"
