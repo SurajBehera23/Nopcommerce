@@ -1,4 +1,3 @@
-from selenium.webdriver.chrome import webdriver
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -15,7 +14,7 @@ class Test01_Admin_Login:
     invalid_username = Read_Config.get_invalid_username()
     logger = Log_Maker.log_gen()
 
-    def test_title_verification(self,setup):
+    def test_title_verification(self, setup):
         self.logger.info("**********test_title_verification started**********")
         self.driver = setup
         self.driver.get(self.admin_page_url)
@@ -31,7 +30,7 @@ class Test01_Admin_Login:
             self.driver.close()
             assert False
 
-    def test_valid_admin_login(self,setup):
+    def test_valid_admin_login(self, setup):
         self.logger.info("**********test_valid_admin_login Started**********")
         self.driver = setup
         self.driver.get(self.admin_page_url)
@@ -51,7 +50,7 @@ class Test01_Admin_Login:
             self.driver.close()
             assert False
 
-    def test_invalid_admin_login(self,setup):
+    def test_invalid_admin_login(self, setup):
         self.logger.info("**********test_invalid_admin_login Started**********")
         self.driver = setup
         self.driver.get(self.admin_page_url)

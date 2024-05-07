@@ -5,6 +5,7 @@ class Login_Admin_Page:
     textbox_username_id = "Email"
     textbox_password_id = "Password"
     btn_submit_xpath = "//button[@type='submit']"
+    logout_link_txt="Logout"
 
     def __init__(self, driver):
         self.driver = driver
@@ -19,3 +20,6 @@ class Login_Admin_Page:
 
     def click_login(self):
         self.driver.find_element(By.XPATH, self.btn_submit_xpath).click()
+
+    def click_logout(self):
+        self.driver.find_element(By.LINK_TEXT,self.logout_link_txt).click()
