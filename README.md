@@ -12,7 +12,6 @@ Welcome to the NopCommerce Test Automation Framework repository. This project co
 - [Running Tests](#running-tests)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
