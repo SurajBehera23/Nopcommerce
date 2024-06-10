@@ -1,1 +1,1 @@
-# Nopcommerce
+Welcome to the NopCommerce Test Automation Framework repository. This project contains automated test scripts for the NopCommerce application, utilizing Selenium WebDriver and Python. The framework is designed to ensure the robustness and reliability of the NopCommerce application through comprehensive automated testing.
